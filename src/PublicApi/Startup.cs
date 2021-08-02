@@ -1,3 +1,4 @@
+using System;
 using AutoMapper;
 using BlazorShared;
 using MediatR;
@@ -129,6 +130,7 @@ namespace Microsoft.eShopWeb.PublicApi
                                   });
             });
 
+            services.AddApplicationInsightsTelemetry(Configuration["APPINSIGHTS_CONNECTIONSTRING"]);
             services.AddControllers();
             services.AddMediatR(typeof(CatalogItem).Assembly);
 
@@ -168,6 +170,8 @@ namespace Microsoft.eShopWeb.PublicApi
                     }
                 });
             });
+
+            throw new Exception("Cannot move further");
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
