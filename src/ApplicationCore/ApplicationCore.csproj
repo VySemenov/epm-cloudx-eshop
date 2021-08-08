@@ -9,12 +9,20 @@
 		<PackageReference Include="Ardalis.GuardClauses" Version="3.0.1" />
 		<PackageReference Include="Ardalis.Specification" Version="4.1.0" />
 		<PackageReference Include="MediatR" Version="9.0.0" />
+		<PackageReference Include="Microsoft.Azure.ServiceBus" Version="5.1.3" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="5.0.0" />
 		<PackageReference Include="System.Security.Claims" Version="4.3.0" />
 		<PackageReference Include="System.Text.Json" Version="5.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <ProjectReference Include="..\BlazorShared\BlazorShared.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Reference Include="Microsoft.Extensions.Configuration.Abstractions">
+	    <HintPath>C:\Users\Viacheslav_Semenov\.nuget\packages\microsoft.extensions.configuration.abstractions\5.0.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+	  </Reference>
 	</ItemGroup>
 
 </Project>

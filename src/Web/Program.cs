@@ -7,6 +7,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace Microsoft.eShopWeb.Web
 {
@@ -28,6 +29,10 @@ namespace Microsoft.eShopWeb.Web
 
                     var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
                     var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+
+                    var identityContext = services.GetRequiredService<AppIdentityDbContext>();
+                    identityContext.Database.Migrate();
+
                     await AppIdentityDbContextSeed.SeedAsync(userManager, roleManager);
                 }
                 catch (Exception ex)
